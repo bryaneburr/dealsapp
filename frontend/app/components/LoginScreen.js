@@ -1,33 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { TextInput, Title, Subtitle, Button, Text, Divider, View, Icon } from '@shoutem/ui';
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: 'center'
   },
-  welcome: {
-    fontSize: 20,
+  title: {
     textAlign: 'center',
-    margin: 10,
+    fontWeight: '700'
   },
-});
+  subtitle: {
+    textAlign: 'center',
+    fontStyle: 'italic'
+  }
+}
 
 const LoginScreen = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text style={styles.welcome}>
-      Screen A
-    </Text>
-    <Text style={styles.instructions}>
-      This is great
-    </Text>
-    <Button
-      onPress={() => navigation.dispatch({ type: 'Login' })}
-      title="Log in"
+  <View style={styles.container} styleName="lg-gutter-horizontal">
+    <Icon name="pin" />
+    <Title style={styles.title}>
+      Gachu
+    </Title>
+    <Subtitle style={styles.subtitle}>
+      Easy Local Deals
+    </Subtitle>
+    <Divider />
+    <TextInput
+      placeholder={'Email'}
+      autoCapitalize={'none'}
     />
+    <Divider />
+    <TextInput
+      placeholder={'Password'}
+      secureTextEntry
+    />
+    <Divider />
+    <Button 
+      styleName="dark"
+      onPress={() => navigation.dispatch({ type: 'Login' })}>
+      <Text>
+        Login
+      </Text>
+    </Button>
+    <Divider />
+    <Button 
+      styleName="clear">
+      <Text>
+        Sign Up
+      </Text>
+    </Button>
   </View>
 );
 
