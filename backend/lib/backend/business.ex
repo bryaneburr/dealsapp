@@ -7,7 +7,6 @@ defmodule Backend.Business do
   schema "businesses" do
     field :address, :string
     field :city, :string
-    field :id, Ecto.UUID
     field :latitude, :string
     field :longitude, :string
     field :metadata, :map
@@ -22,7 +21,7 @@ defmodule Backend.Business do
   @doc false
   def changeset(%Business{} = business, attrs) do
     business
-    |> cast(attrs, [:id, :name, :address, :state, :city, :zipcode, :latitude, :longitude, :signup_code, :metadata])
-    |> validate_required([:id, :name, :address, :state, :city, :zipcode, :latitude, :longitude, :signup_code, :metadata])
+    |> cast(attrs, [:name, :address, :state, :city, :zipcode, :latitude, :longitude, :signup_code, :metadata])
+    |> validate_required([:name, :address, :state, :city, :zipcode, :latitude, :longitude, :signup_code, :metadata])
   end
 end

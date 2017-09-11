@@ -7,7 +7,6 @@ defmodule Backend.User do
   schema "users" do
     field :email, :string
     field :encrypted_password, :string
-    field :id, Ecto.UUID
     field :metadata, :map
     field :name, :string
     field :phone, :string
@@ -18,7 +17,7 @@ defmodule Backend.User do
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:id, :phone, :email, :name, :encrypted_password, :metadata])
-    |> validate_required([:id, :phone, :email, :name, :encrypted_password, :metadata])
+    |> cast(attrs, [:phone, :email, :name, :encrypted_password, :metadata])
+    |> validate_required([:phone, :email, :name, :encrypted_password, :metadata])
   end
 end

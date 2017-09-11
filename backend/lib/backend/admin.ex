@@ -7,7 +7,6 @@ defmodule Backend.Admin do
   schema "admins" do
     field :email, :string
     field :encrypted_password, :string
-    field :id, Ecto.UUID
     field :metadata, :map
     field :name, :string
     field :phone, :string
@@ -18,7 +17,7 @@ defmodule Backend.Admin do
   @doc false
   def changeset(%Admin{} = admin, attrs) do
     admin
-    |> cast(attrs, [:id, :email, :phone, :encrypted_password, :name, :metadata])
-    |> validate_required([:id, :email, :phone, :encrypted_password, :name, :metadata])
+    |> cast(attrs, [:email, :phone, :encrypted_password, :name, :metadata])
+    |> validate_required([:email, :phone, :encrypted_password, :name, :metadata])
   end
 end

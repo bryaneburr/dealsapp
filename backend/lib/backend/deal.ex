@@ -5,13 +5,10 @@ defmodule Backend.Deal do
 
 
   schema "deals" do
-    field :created, :naive_datetime
     field :description, :string
-    field :expires, :naive_datetime
-    field :id, Ecto.UUID
+    field :expires, :utc_datetime
     field :metadata, :map
     field :name, :string
-    field :updated, :naive_datetime
 
     timestamps()
   end
@@ -19,7 +16,7 @@ defmodule Backend.Deal do
   @doc false
   def changeset(%Deal{} = deal, attrs) do
     deal
-    |> cast(attrs, [:id, :name, :description, :created, :updated, :expires, :metadata])
-    |> validate_required([:id, :name, :description, :created, :updated, :expires, :metadata])
+    |> cast(attrs, [:name, :description, :expires, :metadata])
+    |> validate_required([:name, :description, :expires, :metadata])
   end
 end
