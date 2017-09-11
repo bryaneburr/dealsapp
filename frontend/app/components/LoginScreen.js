@@ -29,7 +29,7 @@ const LoginScreen = ({ navigation }) => (
     </Subtitle>
     <Divider />
     <TextInput
-      placeholder={'Email'}
+      placeholder={'Email or Phone Number'}
       autoCapitalize={'none'}
     />
     <Divider />
@@ -47,7 +47,7 @@ const LoginScreen = ({ navigation }) => (
     </Button>
     <Divider />
     <Button 
-      styleName="clear">
+      styleName="clear action">
       <Text>
         Sign Up
       </Text>
