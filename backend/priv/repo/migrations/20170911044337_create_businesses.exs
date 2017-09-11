@@ -3,7 +3,6 @@ defmodule Backend.Repo.Migrations.CreateBusinesses do
 
   def change do
     create table(:businesses) do
-      add :id, :uuid
       add :name, :string
       add :address, :string
       add :state, :string

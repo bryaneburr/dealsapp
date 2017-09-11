@@ -3,7 +3,6 @@ defmodule Backend.Repo.Migrations.CreateAdmins do
 
   def change do
     create table(:admins) do
-      add :id, :uuid
       add :email, :string
       add :phone, :string
       add :encrypted_password, :string

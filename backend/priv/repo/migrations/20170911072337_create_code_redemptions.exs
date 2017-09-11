@@ -3,7 +3,6 @@ defmodule Backend.Repo.Migrations.CreateCodeRedemptions do
 
   def change do
     create table(:code_redemptions) do
-      add :timestamp, :naive_datetime
       add :device_info, :string
       add :metadata, :map
       add :business_id, references(:businesses, on_delete: :nothing)

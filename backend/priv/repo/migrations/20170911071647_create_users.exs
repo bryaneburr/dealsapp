@@ -3,7 +3,6 @@ defmodule Backend.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
-      add :id, :uuid
       add :phone, :string
       add :email, :string
       add :name, :string

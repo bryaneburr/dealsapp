@@ -7,7 +7,6 @@ defmodule Backend.CodeRedemption do
   schema "code_redemptions" do
     field :device_info, :string
     field :metadata, :map
-    field :timestamp, :naive_datetime
     field :business_id, :id
     field :user_id, :id
 
@@ -17,7 +16,7 @@ defmodule Backend.CodeRedemption do
   @doc false
   def changeset(%CodeRedemption{} = code_redemption, attrs) do
     code_redemption
-    |> cast(attrs, [:timestamp, :device_info, :metadata])
-    |> validate_required([:timestamp, :device_info, :metadata])
+    |> cast(attrs, [:device_info, :metadata])
+    |> validate_required([:device_info, :metadata])
   end
 end
