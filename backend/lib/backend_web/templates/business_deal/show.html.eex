@@ -1,0 +1,13 @@
+<h2>Show Business deal</h2>
+
+<ul>
+
+  <li>
+    <strong>Metadata:</strong>
+    <%= @business_deal.metadata %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: business_deal_path(@conn, :edit, @business_deal) %></span>
+<span><%= link "Back", to: business_deal_path(@conn, :index) %></span>

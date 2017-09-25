@@ -1,0 +1,33 @@
+<h2>Show Admin</h2>
+
+<ul>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @admin.email %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @admin.phone %>
+  </li>
+
+  <li>
+    <strong>Encrypted password:</strong>
+    <%= @admin.encrypted_password %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @admin.name %>
+  </li>
+
+  <li>
+    <strong>Metadata:</strong>
+    <%= @admin.metadata %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: admin_path(@conn, :edit, @admin) %></span>
+<span><%= link "Back", to: admin_path(@conn, :index) %></span>

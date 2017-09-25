@@ -1,0 +1,5 @@
+<h2>New Code redemption</h2>
+
+<%= render "form.html", Map.put(assigns, :action, code_redemption_path(@conn, :create)) %>
+
+<span><%= link "Back", to: code_redemption_path(@conn, :index) %></span>

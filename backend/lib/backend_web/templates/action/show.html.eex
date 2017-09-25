@@ -1,0 +1,23 @@
+<h2>Show Action</h2>
+
+<ul>
+
+  <li>
+    <strong>Action type:</strong>
+    <%= @action.action_type %>
+  </li>
+
+  <li>
+    <strong>Timestamp:</strong>
+    <%= @action.timestamp %>
+  </li>
+
+  <li>
+    <strong>Metadata:</strong>
+    <%= @action.metadata %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: action_path(@conn, :edit, @action) %></span>
+<span><%= link "Back", to: action_path(@conn, :index) %></span>

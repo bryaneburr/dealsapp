@@ -1,0 +1,28 @@
+<h2>Listing Business users</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Is owner</th>
+      <th>Metadata</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for business_user <- @business_users do %>
+    <tr>
+      <td><%= business_user.is_owner %></td>
+      <td><%= business_user.metadata %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: business_user_path(@conn, :show, business_user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: business_user_path(@conn, :edit, business_user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: business_user_path(@conn, :delete, business_user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Business user", to: business_user_path(@conn, :new) %></span>

@@ -1,0 +1,53 @@
+<h2>Show Business</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @business.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @business.address %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @business.state %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @business.city %>
+  </li>
+
+  <li>
+    <strong>Zipcode:</strong>
+    <%= @business.zipcode %>
+  </li>
+
+  <li>
+    <strong>Latitude:</strong>
+    <%= @business.latitude %>
+  </li>
+
+  <li>
+    <strong>Longitude:</strong>
+    <%= @business.longitude %>
+  </li>
+
+  <li>
+    <strong>Signup code:</strong>
+    <%= @business.signup_code %>
+  </li>
+
+  <li>
+    <strong>Metadata:</strong>
+    <%= @business.metadata %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: business_path(@conn, :edit, @business) %></span>
+<span><%= link "Back", to: business_path(@conn, :index) %></span>
