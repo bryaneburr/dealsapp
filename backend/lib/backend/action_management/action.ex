@@ -7,7 +7,6 @@ defmodule Backend.ActionManagement.Action do
   schema "actions" do
     field :action_type, :string
     field :metadata, :map
-    field :timestamp, :naive_datetime
     field :user_id, :id
     field :deal_id, :id
 
@@ -17,7 +16,7 @@ defmodule Backend.ActionManagement.Action do
   @doc false
   def changeset(%Action{} = action, attrs) do
     action
-    |> cast(attrs, [:action_type, :timestamp, :metadata])
-    |> validate_required([:action_type, :timestamp, :metadata])
+    |> cast(attrs, [:action_type, :metadata])
+    |> validate_required([:action_type, :metadata])
   end
 end

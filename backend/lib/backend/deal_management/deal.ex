@@ -5,12 +5,10 @@ defmodule Backend.DealManagement.Deal do
 
 
   schema "deals" do
-    field :created, :naive_datetime
     field :description, :string
     field :expires, :naive_datetime
     field :metadata, :map
     field :name, :string
-    field :updated, :naive_datetime
 
     timestamps()
   end
@@ -18,7 +16,7 @@ defmodule Backend.DealManagement.Deal do
   @doc false
   def changeset(%Deal{} = deal, attrs) do
     deal
-    |> cast(attrs, [:name, :description, :created, :updated, :expires, :metadata])
-    |> validate_required([:name, :description, :created, :updated, :expires, :metadata])
+    |> cast(attrs, [:name, :description, :expires, :metadata])
+    |> validate_required([:name, :description, :expires, :metadata])
   end
 end

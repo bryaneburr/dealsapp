@@ -6,7 +6,6 @@ defmodule Backend.ActionManagement.DealRedemption do
 
   schema "deal_redemptions" do
     field :metadata, :map
-    field :timestamp, :naive_datetime
     field :user_id, :id
     field :deal_id, :id
 
@@ -16,7 +15,7 @@ defmodule Backend.ActionManagement.DealRedemption do
   @doc false
   def changeset(%DealRedemption{} = deal_redemption, attrs) do
     deal_redemption
-    |> cast(attrs, [:timestamp, :metadata])
-    |> validate_required([:timestamp, :metadata])
+    |> cast(attrs, [:metadata])
+    |> validate_required([:metadata])
   end
 end
