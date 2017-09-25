@@ -1,0 +1,30 @@
+<h2>Listing Actions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Action type</th>
+      <th>Timestamp</th>
+      <th>Metadata</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for action <- @actions do %>
+    <tr>
+      <td><%= action.action_type %></td>
+      <td><%= action.timestamp %></td>
+      <td><%= action.metadata %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: action_path(@conn, :show, action), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: action_path(@conn, :edit, action), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: action_path(@conn, :delete, action), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Action", to: action_path(@conn, :new) %></span>

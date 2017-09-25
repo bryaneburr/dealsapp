@@ -1,0 +1,18 @@
+<h2>Show Business user</h2>
+
+<ul>
+
+  <li>
+    <strong>Is owner:</strong>
+    <%= @business_user.is_owner %>
+  </li>
+
+  <li>
+    <strong>Metadata:</strong>
+    <%= @business_user.metadata %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: business_user_path(@conn, :edit, @business_user) %></span>
+<span><%= link "Back", to: business_user_path(@conn, :index) %></span>

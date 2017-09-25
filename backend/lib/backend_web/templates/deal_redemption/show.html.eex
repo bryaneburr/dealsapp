@@ -1,0 +1,18 @@
+<h2>Show Deal redemption</h2>
+
+<ul>
+
+  <li>
+    <strong>Timestamp:</strong>
+    <%= @deal_redemption.timestamp %>
+  </li>
+
+  <li>
+    <strong>Metadata:</strong>
+    <%= @deal_redemption.metadata %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: deal_redemption_path(@conn, :edit, @deal_redemption) %></span>
+<span><%= link "Back", to: deal_redemption_path(@conn, :index) %></span>

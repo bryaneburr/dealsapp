@@ -1,0 +1,28 @@
+<h2>Listing Deal redemptions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Metadata</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for deal_redemption <- @deal_redemptions do %>
+    <tr>
+      <td><%= deal_redemption.timestamp %></td>
+      <td><%= deal_redemption.metadata %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: deal_redemption_path(@conn, :show, deal_redemption), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: deal_redemption_path(@conn, :edit, deal_redemption), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: deal_redemption_path(@conn, :delete, deal_redemption), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Deal redemption", to: deal_redemption_path(@conn, :new) %></span>

@@ -1,0 +1,5 @@
+<h2>Edit Deal redemption</h2>
+
+<%= render "form.html", Map.put(assigns, :action, deal_redemption_path(@conn, :update, @deal_redemption)) %>
+
+<span><%= link "Back", to: deal_redemption_path(@conn, :index) %></span>

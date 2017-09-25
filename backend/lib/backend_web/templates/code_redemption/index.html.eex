@@ -1,0 +1,30 @@
+<h2>Listing Code redemptions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Device info</th>
+      <th>Metadata</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for code_redemption <- @code_redemptions do %>
+    <tr>
+      <td><%= code_redemption.timestamp %></td>
+      <td><%= code_redemption.device_info %></td>
+      <td><%= code_redemption.metadata %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: code_redemption_path(@conn, :show, code_redemption), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: code_redemption_path(@conn, :edit, code_redemption), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: code_redemption_path(@conn, :delete, code_redemption), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Code redemption", to: code_redemption_path(@conn, :new) %></span>

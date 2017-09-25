@@ -1,0 +1,5 @@
+<h2>New Deal</h2>
+
+<%= render "form.html", Map.put(assigns, :action, deal_path(@conn, :create)) %>
+
+<span><%= link "Back", to: deal_path(@conn, :index) %></span>

@@ -1,0 +1,38 @@
+<h2>Show Deal</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @deal.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @deal.description %>
+  </li>
+
+  <li>
+    <strong>Created:</strong>
+    <%= @deal.created %>
+  </li>
+
+  <li>
+    <strong>Updated:</strong>
+    <%= @deal.updated %>
+  </li>
+
+  <li>
+    <strong>Expires:</strong>
+    <%= @deal.expires %>
+  </li>
+
+  <li>
+    <strong>Metadata:</strong>
+    <%= @deal.metadata %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: deal_path(@conn, :edit, @deal) %></span>
+<span><%= link "Back", to: deal_path(@conn, :index) %></span>

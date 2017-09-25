@@ -1,0 +1,36 @@
+<h2>Listing Deals</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Created</th>
+      <th>Updated</th>
+      <th>Expires</th>
+      <th>Metadata</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for deal <- @deals do %>
+    <tr>
+      <td><%= deal.name %></td>
+      <td><%= deal.description %></td>
+      <td><%= deal.created %></td>
+      <td><%= deal.updated %></td>
+      <td><%= deal.expires %></td>
+      <td><%= deal.metadata %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: deal_path(@conn, :show, deal), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: deal_path(@conn, :edit, deal), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: deal_path(@conn, :delete, deal), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Deal", to: deal_path(@conn, :new) %></span>

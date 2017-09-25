@@ -1,0 +1,23 @@
+<h2>Show Code redemption</h2>
+
+<ul>
+
+  <li>
+    <strong>Timestamp:</strong>
+    <%= @code_redemption.timestamp %>
+  </li>
+
+  <li>
+    <strong>Device info:</strong>
+    <%= @code_redemption.device_info %>
+  </li>
+
+  <li>
+    <strong>Metadata:</strong>
+    <%= @code_redemption.metadata %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: code_redemption_path(@conn, :edit, @code_redemption) %></span>
+<span><%= link "Back", to: code_redemption_path(@conn, :index) %></span>
